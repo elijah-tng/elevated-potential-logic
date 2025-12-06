@@ -71,12 +71,12 @@
 			<dependency>
 				<groupId>com.github.elijah-team.radical-paradox</groupId>
 				<artifactId>annotation-processing</artifactId>
-				<version>0caa8de714</version>
+				<version>25-11-06.fix</version>
 			</dependency>
 			<dependency>
 				<groupId>com.github.elijah-team.radical-paradox</groupId>
 				<artifactId>annotations-mustache</artifactId>
-				<version>0caa8de714</version>
+				<version>25-11-06.fix</version>
 			</dependency>
 
 			<!--
