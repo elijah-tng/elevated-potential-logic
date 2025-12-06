@@ -127,6 +127,7 @@
 				<version>4.9.3</version>
 			</dependency>
 
+			<!--
 			<dependency>
 				<groupId>com.gitlab.tripleo1</groupId>
 				<artifactId>buffers</artifactId>
@@ -138,19 +139,25 @@
 				<artifactId>range</artifactId>
 				<version>0.0.3b</version>
 			</dependency>
+			-->
 
 
+<!--
 			<dependency>
 				<groupId>javax.annotation</groupId>
 				<artifactId>javax.annotation-api</artifactId>
 				<version>1.3.2</version>
 			</dependency>
+-->
+<!--
 			<dependency>
 				<groupId>org.eclipse.jdt</groupId>
 				<artifactId>org.eclipse.jdt.annotation</artifactId>
 				<version>2.3.100</version>
 			</dependency>
+-->
 
+<!--
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
@@ -171,7 +178,7 @@
 			<dependency>
 				<groupId>com.github.spotbugs</groupId>
 				<artifactId>spotbugs-annotations</artifactId>
-				<!--				<version>4.9.3</version>-->
+				&lt;!&ndash;				<version>4.9.3</version>&ndash;&gt;
 			</dependency>
 			<dependency>
 				<groupId>com.google.guava</groupId>
@@ -215,13 +222,13 @@
 				<version>1.18.42</version>
 				<scope>provided</scope>
 			</dependency>
-			<!--
+			&lt;!&ndash;
 			<dependency>
 			<groupId>org.jdeferred.v2</groupId>
 			<artifactId>jdeferred-core</artifactId>
 			<version>2.0.0</version>
 			</dependency>
-			-->
+			&ndash;&gt;
 			<dependency>
 				<groupId>org.jetbrains</groupId>
 				<artifactId>annotations</artifactId>
@@ -269,8 +276,8 @@
 				<version>3.52.1</version>
 				<scope>provided</scope>
 			</dependency>
+-->
 		</dependencies>
-
 	</dependencyManagement>
 
 	<repositories>
