@@ -142,108 +142,117 @@
 			-->
 
 
-<!--
-			<dependency>
-				<groupId>javax.annotation</groupId>
-				<artifactId>javax.annotation-api</artifactId>
-				<version>1.3.2</version>
-			</dependency>
--->
-<!--
-			<dependency>
-				<groupId>org.eclipse.jdt</groupId>
-				<artifactId>org.eclipse.jdt.annotation</artifactId>
-				<version>2.3.100</version>
-			</dependency>
--->
+			<!--
+						<dependency>
+							<groupId>javax.annotation</groupId>
+							<artifactId>javax.annotation-api</artifactId>
+							<version>1.3.2</version>
+						</dependency>
+			-->
+			<!--
+						<dependency>
+							<groupId>org.eclipse.jdt</groupId>
+							<artifactId>org.eclipse.jdt.annotation</artifactId>
+							<version>2.3.100</version>
+						</dependency>
+			-->
 
-<!--
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-lang3</artifactId>
-				<version>3.19.0</version>
-			</dependency>
+			<!--
+						<dependency>
+							<groupId>org.apache.commons</groupId>
+							<artifactId>commons-lang3</artifactId>
+							<version>3.19.0</version>
+						</dependency>
 
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-simple</artifactId>
-				<version>2.0.17</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>2.0.17</version>
-			</dependency>
+						<dependency>
+							<groupId>org.slf4j</groupId>
+							<artifactId>slf4j-simple</artifactId>
+							<version>2.0.17</version>
+						</dependency>
+						<dependency>
+							<groupId>org.slf4j</groupId>
+							<artifactId>slf4j-api</artifactId>
+							<version>2.0.17</version>
+						</dependency>
 
-			<dependency>
-				<groupId>com.github.spotbugs</groupId>
-				<artifactId>spotbugs-annotations</artifactId>
-				&lt;!&ndash;				<version>4.9.3</version>&ndash;&gt;
-			</dependency>
-			<dependency>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-				<version>${guava.version}</version>
-			</dependency>
+						<dependency>
+							<groupId>com.github.spotbugs</groupId>
+							<artifactId>spotbugs-annotations</artifactId>
+							&lt;!&ndash;				<version>4.9.3</version>&ndash;&gt;
+						</dependency>
+						<dependency>
+							<groupId>com.google.guava</groupId>
+							<artifactId>guava</artifactId>
+							<version>${guava.version}</version>
+						</dependency>
 
-			<dependency>
-				<groupId>io.reactivex.rxjava3</groupId>
-				<artifactId>rxjava</artifactId>
-				<version>3.1.10</version>
-			</dependency>
+						<dependency>
+							<groupId>io.reactivex.rxjava3</groupId>
+							<artifactId>rxjava</artifactId>
+							<version>3.1.10</version>
+						</dependency>
 
-			<dependency>
-				<groupId>org.reactivestreams</groupId>
-				<artifactId>reactive-streams</artifactId>
-				<version>1.0.4</version>
-			</dependency>
+						<dependency>
+							<groupId>org.reactivestreams</groupId>
+							<artifactId>reactive-streams</artifactId>
+							<version>1.0.4</version>
+						</dependency>
 
-			<dependency>
-				<groupId>commons-codec</groupId>
-				<artifactId>commons-codec</artifactId>
-				<version>1.19.0</version>
-			</dependency>
+						<dependency>
+							<groupId>commons-codec</groupId>
+							<artifactId>commons-codec</artifactId>
+							<version>1.19.0</version>
+						</dependency>
 
-			<dependency>
-				<groupId>org.eclipse.xtend</groupId>
-				<artifactId>org.eclipse.xtend.lib</artifactId>
-				<version>${org.eclipse.xtend.lib.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.eclipse.xtend</groupId>
-				<artifactId>org.eclipse.xtend.core</artifactId>
-				<version>${org.eclipse.xtend.lib.version}</version>
-			</dependency>
+						<dependency>
+							<groupId>org.eclipse.xtend</groupId>
+							<artifactId>org.eclipse.xtend.lib</artifactId>
+							<version>${org.eclipse.xtend.lib.version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.eclipse.xtend</groupId>
+							<artifactId>org.eclipse.xtend.core</artifactId>
+							<version>${org.eclipse.xtend.lib.version}</version>
+						</dependency>
 
 
-			<dependency>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok</artifactId>
-				<version>1.18.42</version>
-				<scope>provided</scope>
-			</dependency>
-			&lt;!&ndash;
-			<dependency>
-			<groupId>org.jdeferred.v2</groupId>
-			<artifactId>jdeferred-core</artifactId>
-			<version>2.0.0</version>
-			</dependency>
-			&ndash;&gt;
+						<dependency>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>1.18.42</version>
+							<scope>provided</scope>
+						</dependency>
+						&lt;!&ndash;
+						<dependency>
+						<groupId>org.jdeferred.v2</groupId>
+						<artifactId>jdeferred-core</artifactId>
+						<version>2.0.0</version>
+						</dependency>
+
+
+						<dependency>
+							<groupId>org.jetbrains.kotlin</groupId>
+							<artifactId>kotlin-stdlib-jdk8</artifactId>
+							<version>${kotlin.version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.jetbrains.kotlin</groupId>
+							<artifactId>kotlin-test-junit</artifactId>
+							<version>${kotlin.version}</version>
+						</dependency>
+
+
+						<dependency>
+							<groupId>org.jctools</groupId>
+							<artifactId>jctools-core</artifactId>
+							<version>4.0.5</version>
+						</dependency>
+			-->
+
 			<dependency>
 				<groupId>org.jetbrains</groupId>
 				<artifactId>annotations</artifactId>
 				<version>26.0.2</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.jetbrains.kotlin</groupId>
-				<artifactId>kotlin-stdlib-jdk8</artifactId>
-				<version>${kotlin.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.jetbrains.kotlin</groupId>
-				<artifactId>kotlin-test-junit</artifactId>
-				<version>${kotlin.version}</version>
 			</dependency>
 
 			<dependency>
@@ -260,15 +269,21 @@
 			</dependency>
 
 			<dependency>
-				<groupId>org.jctools</groupId>
-				<artifactId>jctools-core</artifactId>
-				<version>4.0.5</version>
-			</dependency>
-
-			<dependency>
 				<groupId>org.junit.jupiter</groupId>
 				<artifactId>junit-jupiter</artifactId>
-				<version>5.11.0</version>
+				<version>5.11.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-api</artifactId>
+				<version>5.11.4</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.vintage</groupId>
+				<artifactId>junit-vintage-engine</artifactId>
+				<version>5.11.4</version>
+				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.checkerframework</groupId>
@@ -276,7 +291,6 @@
 				<version>3.52.1</version>
 				<scope>provided</scope>
 			</dependency>
--->
 		</dependencies>
 	</dependencyManagement>
 

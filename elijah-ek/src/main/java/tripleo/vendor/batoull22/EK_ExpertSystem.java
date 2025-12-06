@@ -199,6 +199,6 @@ public class EK_ExpertSystem {
 	}
 
 	private void logProgress(final int code, final String message) {
-		SimplePrintLoggerToRemoveSoon.println_out_4(code + " " + message);
+		SimplePrintLoggerToRemoveSoon.println_out/*_4*/(code + " " + message);
 	}
 }

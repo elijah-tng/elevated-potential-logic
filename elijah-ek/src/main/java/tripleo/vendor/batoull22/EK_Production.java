@@ -1,12 +1,10 @@
 package tripleo.vendor.batoull22;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import tripleo.elijah_fluffy.util.SimplePrintLoggerToRemoveSoon;
+
+import java.util.*;
 
 /**
  * @author tripleo
@@ -66,7 +64,7 @@ class EK_Production {
 		return st;
 	}
 
-	private void logProgress(final int aI, final String aList) {
-		SimplePrintLoggerToRemoveSoon.println_out_4(aI + " " + aList);
+	private void logProgress(final int code, final String message) {
+		SimplePrintLoggerToRemoveSoon.println_out/*_4*/(""+code + " " + message);
 	}
 }

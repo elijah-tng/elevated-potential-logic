@@ -1,19 +1,13 @@
 package tripleo.vendor.com.github.dritter.hd.dlog;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import org.junit.jupiter.api.Disabled;
-import tripleo.vendor.com.github.dritter.hd.dlog.algebra.ParameterValue;
-import tripleo.vendor.com.github.dritter.hd.dlog.algebra.TableIterator;
+import org.junit.jupiter.api.*;
+import tripleo.vendor.com.github.dritter.hd.dlog.algebra.*;
 import tripleo.vendor.com.github.dritter.hd.dlog.parser.DlogParser;
-import org.junit.jupiter.api.Test;
-
-import tripleo.vendor.com.github.dritter.hd.dlog.algebra.DataIterator;
 import tripleo.vendor.com.github.dritter.hd.dlog.utils.Utils;
+
+import java.util.*;
+
+import static org.junit.Assert.*;
 
 public final class EvalTest {
 	@Test
@@ -28,7 +22,7 @@ public final class EvalTest {
 
 		final Collection<IFacts> edbRelations = parser.getFacts();
 
-		final IEvaluator evaluator = new NaiveRecursiveEvaluator(rules);
+		final IEvaluator         evaluator    = new NaiveRecursiveEvaluator(rules);
 		final Collection<IFacts> idbRelations = evaluator.eval(edbRelations);
 
 		assertEquals(1, idbRelations.size());
@@ -38,6 +32,7 @@ public final class EvalTest {
 	}
 
 	@Disabled
+	//@Ignore
 	@Test
 	public void testHammingCodes() {
 		final String program = "h(Y) :- h(X), Y=2*X. h(Y) :- h(X), Y=3*X. h(Y) :- h(X), Y=5*X. h(1).";
@@ -49,7 +44,7 @@ public final class EvalTest {
 
 		Collection<IFacts> edbRelations = parser.getFacts();
 
-		final IEvaluator evaluator = new NaiveRecursiveEvaluator(rules);
+		final IEvaluator         evaluator    = new NaiveRecursiveEvaluator(rules);
 		final Collection<IFacts> idbRelations = evaluator.eval(edbRelations);
 
 	}
@@ -66,7 +61,7 @@ public final class EvalTest {
 		// final Parameter paramN = NumericParameter.createConstant(1);
 		final Parameter<Integer> paramN = Parameter.createConstant(-1);
 
-		final Literal head = Literal.create(sum, paramX);
+		final Literal head  = Literal.create(sum, paramX);
 		final Literal body1 = Literal.create(add, paramX, paramY);
 		final Literal body2 = Literal.create(BuiltInPredicates.GREATER, paramX, paramN);
 
@@ -82,12 +77,12 @@ public final class EvalTest {
 		f.add(fq);
 
 		// run evaluation
-		final IEvaluator eval = new NonRecursiveEvaluator(rules);
+		final IEvaluator         eval   = new NonRecursiveEvaluator(rules);
 		final Collection<IFacts> result = eval.eval(f);
 
 		assertEquals(1, result.size());
 
-		final ParameterValue<?>[] expected = new ParameterValue[] { ParameterValue.create(1) };
+		final ParameterValue<?>[] expected = new ParameterValue[]{ParameterValue.create(1)};
 
 		for (IFacts fact : result) {
 			assertEquals(fact.getPredicate().getName(), "sum");
@@ -113,7 +108,7 @@ public final class EvalTest {
 		// final Parameter paramN = NumericParameter.createConstant(1);
 		final Parameter<Integer> paramN = Parameter.createConstant(1);
 
-		final Literal head = Literal.create(sum, paramX);
+		final Literal head  = Literal.create(sum, paramX);
 		final Literal body1 = Literal.create(add, paramX, paramY);
 		final Literal body2 = Literal.create(BuiltInPredicates.GREATER, paramX, paramN);
 
@@ -129,7 +124,7 @@ public final class EvalTest {
 		f.add(fq);
 
 		// run evaluation
-		final IEvaluator eval = new NonRecursiveEvaluator(rules);
+		final IEvaluator         eval   = new NonRecursiveEvaluator(rules);
 		final Collection<IFacts> result = eval.eval(f);
 
 		assertEquals(1, result.size());
@@ -156,7 +151,7 @@ public final class EvalTest {
 		// final Parameter paramN = NumericParameter.createConstant(1);
 		final Parameter<Integer> paramN = Parameter.createConstant(0);
 
-		final Literal head = Literal.create(sum, paramX);
+		final Literal head  = Literal.create(sum, paramX);
 		final Literal body1 = Literal.create(add, paramX, paramY);
 		final Literal body2 = Literal.create(BuiltInPredicates.GREATER, paramX, paramN);
 
@@ -172,12 +167,12 @@ public final class EvalTest {
 		f.add(fq);
 
 		// run evaluation
-		final IEvaluator eval = new NonRecursiveEvaluator(rules);
+		final IEvaluator         eval   = new NonRecursiveEvaluator(rules);
 		final Collection<IFacts> result = eval.eval(f);
 
 		assertEquals(1, result.size());
 
-		final ParameterValue<?>[] expected = new ParameterValue[] { ParameterValue.create(1) };
+		final ParameterValue<?>[] expected = new ParameterValue[]{ParameterValue.create(1)};
 
 		for (IFacts fact : result) {
 			assertEquals(fact.getPredicate().getName(), "sum");
@@ -203,7 +198,7 @@ public final class EvalTest {
 		// final Parameter paramN = NumericParameter.createConstant(1);
 		final Parameter<Integer> paramN = Parameter.createConstant(3);
 
-		final Literal head = Literal.create(sum, paramX);
+		final Literal head  = Literal.create(sum, paramX);
 		final Literal body1 = Literal.create(add, paramX, paramY);
 		final Literal body2 = Literal.create(BuiltInPredicates.EQUALS, paramX, paramN);
 
@@ -219,7 +214,7 @@ public final class EvalTest {
 		f.add(fq);
 
 		// run evaluation
-		final IEvaluator eval = new NonRecursiveEvaluator(rules);
+		final IEvaluator         eval   = new NonRecursiveEvaluator(rules);
 		final Collection<IFacts> result = eval.eval(f);
 
 		assertEquals(1, result.size());
@@ -246,7 +241,7 @@ public final class EvalTest {
 		// final Parameter paramN = NumericParameter.createConstant(1);
 		final Parameter<Integer> paramN = Parameter.createConstant(1);
 
-		final Literal head = Literal.create(sum, paramX);
+		final Literal head  = Literal.create(sum, paramX);
 		final Literal body1 = Literal.create(add, paramX, paramY);
 		final Literal body2 = Literal.create(BuiltInPredicates.EQUALS, paramX, paramN);
 
@@ -262,12 +257,12 @@ public final class EvalTest {
 		f.add(fq);
 
 		// run evaluation
-		final IEvaluator eval = new NonRecursiveEvaluator(rules);
+		final IEvaluator         eval   = new NonRecursiveEvaluator(rules);
 		final Collection<IFacts> result = eval.eval(f);
 
 		assertEquals(1, result.size());
 
-		final ParameterValue<?>[] expected = new ParameterValue[] { ParameterValue.create(1) };
+		final ParameterValue<?>[] expected = new ParameterValue[]{ParameterValue.create(1)};
 
 		for (IFacts fact : result) {
 			assertEquals(fact.getPredicate().getName(), "sum");
@@ -285,8 +280,8 @@ public final class EvalTest {
 	 * @return DataIterator
 	 */
 	private static DataIterator getNumericSelectionTable() {
-		final ParameterValue<?>[][] values = new ParameterValue<?>[][] { { ParameterValue.create(1), ParameterValue.create("def") },
-				{ ParameterValue.create(1), ParameterValue.create("abc") } };
+		final ParameterValue<?>[][] values = new ParameterValue<?>[][]{{ParameterValue.create(1), ParameterValue.create("def")},
+				{ParameterValue.create(1), ParameterValue.create("abc")}};
 		return new TableIterator(values);
 	}
 
@@ -305,7 +300,7 @@ public final class EvalTest {
 		final Parameter<?> paramY = Parameter.createVariable("Y");
 		final Parameter<?> paramZ = Parameter.createVariable("Z");
 
-		final Literal head = Literal.create(p, paramX, paramY);
+		final Literal head  = Literal.create(p, paramX, paramY);
 		final Literal body1 = Literal.create(q, paramX, paramZ);
 		final Literal body2 = Literal.create(r, paramW, paramY);
 		final Literal body3 = Literal.create(BuiltInPredicates.EQUALS, paramZ, paramW);
@@ -324,12 +319,12 @@ public final class EvalTest {
 		f.add(fr);
 
 		// run evaluation
-		final IEvaluator eval = new NonRecursiveEvaluator(rules);
+		final IEvaluator         eval   = new NonRecursiveEvaluator(rules);
 		final Collection<IFacts> result = eval.eval(f);
 
 		assertEquals(1, result.size());
 
-		final ParameterValue<?>[] expected = new ParameterValue<?>[] { ParameterValue.create("abc"), ParameterValue.create("ghi") };
+		final ParameterValue<?>[] expected = new ParameterValue<?>[]{ParameterValue.create("abc"), ParameterValue.create("ghi")};
 		for (IFacts fact : result) {
 			assertEquals(fact.getPredicate().getName(), "p");
 
@@ -355,7 +350,7 @@ public final class EvalTest {
 		final Parameter<?> paramY = Parameter.createVariable("Y");
 		final Parameter<?> paramZ = Parameter.createVariable("Z");
 
-		final Literal head = Literal.create(p, paramX, paramY);
+		final Literal head  = Literal.create(p, paramX, paramY);
 		final Literal body1 = Literal.create(q, paramX, paramZ);
 		final Literal body2 = Literal.create(r, paramZ, paramY);
 
@@ -373,12 +368,12 @@ public final class EvalTest {
 		f.add(fr);
 
 		// run evaluation
-		final IEvaluator eval = new NonRecursiveEvaluator(rules);
+		final IEvaluator         eval   = new NonRecursiveEvaluator(rules);
 		final Collection<IFacts> result = eval.eval(f);
 
 		assertEquals(1, result.size());
 
-		final ParameterValue<?>[] expected = new ParameterValue<?>[] { ParameterValue.create("abc"), ParameterValue.create("ghi") };
+		final ParameterValue<?>[] expected = new ParameterValue<?>[]{ParameterValue.create("abc"), ParameterValue.create("ghi")};
 		for (IFacts fact : result) {
 			assertEquals(fact.getPredicate().getName(), "p");
 
@@ -399,10 +394,10 @@ public final class EvalTest {
 		final Predicate p = Predicate.create("p", 1);
 		final Predicate q = Predicate.create("q", 2);
 
-		final Parameter<?> paramX = Parameter.createVariable("X");
+		final Parameter<?> paramX   = Parameter.createVariable("X");
 		final Parameter<?> paramAbc = Parameter.createConstant("abc");
 
-		final Literal head = Literal.create(p, paramX);
+		final Literal head  = Literal.create(p, paramX);
 		final Literal body1 = Literal.create(q, paramX, paramAbc);
 
 		final Rule rule = Rule.create(head, body1);
@@ -417,12 +412,12 @@ public final class EvalTest {
 		f.add(fq);
 
 		// run evaluation
-		final IEvaluator eval = new NonRecursiveEvaluator(rules);
+		final IEvaluator         eval   = new NonRecursiveEvaluator(rules);
 		final Collection<IFacts> result = eval.eval(f);
 
 		assertEquals(1, result.size());
 
-		final ParameterValue<?>[] expected = new ParameterValue<?>[] { ParameterValue.create("abc") };
+		final ParameterValue<?>[] expected = new ParameterValue<?>[]{ParameterValue.create("abc")};
 		for (IFacts fact : result) {
 			assertEquals(fact.getPredicate().getName(), "p");
 
@@ -443,11 +438,11 @@ public final class EvalTest {
 		final Predicate p = Predicate.create("p", 2);
 		final Predicate q = Predicate.create("q", 2);
 
-		final Parameter<?> paramX = Parameter.createVariable("X");
-		final Parameter<?> paramY = Parameter.createVariable("Y");
+		final Parameter<?> paramX   = Parameter.createVariable("X");
+		final Parameter<?> paramY   = Parameter.createVariable("Y");
 		final Parameter<?> paramAbc = Parameter.createConstant("abc");
 
-		final Literal head = Literal.create(p, paramX, paramAbc);
+		final Literal head  = Literal.create(p, paramX, paramAbc);
 		final Literal body1 = Literal.create(q, paramX, paramY);
 
 		final Rule rule = Rule.create(head, body1);
@@ -462,12 +457,12 @@ public final class EvalTest {
 		f.add(fq);
 
 		// run evaluation
-		final IEvaluator eval = new NonRecursiveEvaluator(rules);
+		final IEvaluator         eval   = new NonRecursiveEvaluator(rules);
 		final Collection<IFacts> result = eval.eval(f);
 
 		assertEquals(1, result.size());
 
-		final ParameterValue<?>[] expected = new ParameterValue<?>[] { ParameterValue.create("abc"), ParameterValue.create("abc") };
+		final ParameterValue<?>[] expected = new ParameterValue<?>[]{ParameterValue.create("abc"), ParameterValue.create("abc")};
 		for (IFacts fact : result) {
 			assertEquals(fact.getPredicate().getName(), "p");
 
@@ -492,7 +487,7 @@ public final class EvalTest {
 		final Parameter<?> paramX = Parameter.createVariable("X");
 		final Parameter<?> paramY = Parameter.createVariable("Y");
 
-		final Literal head = Literal.create(p, paramX, paramX);
+		final Literal head  = Literal.create(p, paramX, paramX);
 		final Literal body1 = Literal.create(q, paramX, paramY);
 
 		final Rule rule = Rule.create(head, body1);
@@ -507,7 +502,7 @@ public final class EvalTest {
 		f.add(fq);
 
 		// run evaluation
-		final IEvaluator eval = new NonRecursiveEvaluator(rules);
+		final IEvaluator         eval   = new NonRecursiveEvaluator(rules);
 		final Collection<IFacts> result = eval.eval(f);
 
 		assertEquals(1, result.size());
@@ -518,10 +513,10 @@ public final class EvalTest {
 			final DataIterator op = fact.getValues();
 			op.open();
 			ParameterValue<?>[] tuple = op.next();
-			assertArrayEquals(new ParameterValue<?>[] { ParameterValue.create("abc"), ParameterValue.create("abc") }, tuple);
+			assertArrayEquals(new ParameterValue<?>[]{ParameterValue.create("abc"), ParameterValue.create("abc")}, tuple);
 
 			tuple = op.next();
-			assertArrayEquals(new ParameterValue<?>[] { ParameterValue.create("abc"), ParameterValue.create("abc") }, tuple);
+			assertArrayEquals(new ParameterValue<?>[]{ParameterValue.create("abc"), ParameterValue.create("abc")}, tuple);
 
 			tuple = op.next();
 			assertNull(tuple);
@@ -534,11 +529,11 @@ public final class EvalTest {
 
 		/*
 		 * p(X, Y) :- r(X, Y).
-		 * 
+		 *
 		 * r(a, b). r(c, d).
-		 * 
+		 *
 		 * Expected IDB facts:
-		 * 
+		 *
 		 * p(a, b). p(c, d).
 		 */
 
@@ -548,7 +543,7 @@ public final class EvalTest {
 		Parameter<?> argumentX = Parameter.createVariable("X");
 		Parameter<?> argumentY = Parameter.createVariable("Y");
 
-		Literal head = Literal.create(p, argumentX, argumentY);
+		Literal head     = Literal.create(p, argumentX, argumentY);
 		Literal subgoal1 = Literal.create(r, argumentX, argumentY);
 
 		IRule rule = Rule.create(head, subgoal1);
@@ -556,9 +551,9 @@ public final class EvalTest {
 		List<IRule> rules = new ArrayList<IRule>();
 		rules.add(rule);
 
-		String[][] relationR1 = { { "a", "b" } };
+		String[][] relationR1 = {{"a", "b"}};
 
-		String[][] relationR2 = { { "c", "d" } };
+		String[][] relationR2 = {{"c", "d"}};
 
 		DataIterator relationR1Iterator = Utils.createRelationIterator(relationR1);
 		DataIterator relationR2Iterator = Utils.createRelationIterator(relationR2);
@@ -570,7 +565,7 @@ public final class EvalTest {
 		edbRelations.add(relationR1Facts);
 		edbRelations.add(relationR2Facts);
 
-		IEvaluator evaluator = new NonRecursiveEvaluator(rules);
+		IEvaluator         evaluator    = new NonRecursiveEvaluator(rules);
 		Collection<IFacts> idbRelations = evaluator.eval(edbRelations);
 
 		assertEquals(1, idbRelations.size());
@@ -590,13 +585,13 @@ public final class EvalTest {
 
 		/*
 		 * p(W, X, Y, Z) :- r(W, X) & s(Y, Z).
-		 * 
+		 *
 		 * r(a, b). r(c, d).
-		 * 
+		 *
 		 * s(e, f). s(g, h).
-		 * 
+		 *
 		 * Expected IDB facts:
-		 * 
+		 *
 		 * p(a, b, e, f). p(a, b, g, h). p(c, d, e, f). p(c, d, g, h).
 		 */
 
@@ -609,7 +604,7 @@ public final class EvalTest {
 		Parameter<?> argumentY = Parameter.createVariable("Y");
 		Parameter<?> argumentZ = Parameter.createVariable("Z");
 
-		Literal head = Literal.create(p, argumentW, argumentX, argumentY, argumentZ);
+		Literal head     = Literal.create(p, argumentW, argumentX, argumentY, argumentZ);
 		Literal subgoal1 = Literal.create(r, argumentW, argumentX);
 		Literal subgoal2 = Literal.create(s, argumentY, argumentZ);
 
@@ -618,9 +613,9 @@ public final class EvalTest {
 		List<IRule> rules = new ArrayList<IRule>();
 		rules.add(rule);
 
-		String[][] relationR = { { "a", "b" }, { "c", "d" } };
+		String[][] relationR = {{"a", "b"}, {"c", "d"}};
 
-		String[][] relationS = { { "e", "f" }, { "g", "h" } };
+		String[][] relationS = {{"e", "f"}, {"g", "h"}};
 
 		DataIterator relationRIterator = Utils.createRelationIterator(relationR);
 		DataIterator relationSIterator = Utils.createRelationIterator(relationS);
@@ -632,7 +627,7 @@ public final class EvalTest {
 		edbRelations.add(relationRFacts);
 		edbRelations.add(relationSFacts);
 
-		IEvaluator evaluator = new NonRecursiveEvaluator(rules);
+		IEvaluator         evaluator    = new NonRecursiveEvaluator(rules);
 		Collection<IFacts> idbRelations = evaluator.eval(edbRelations);
 
 		assertEquals(1, idbRelations.size());
@@ -652,11 +647,11 @@ public final class EvalTest {
 
 		/*
 		 * p(W, X, Y, Z) :- r(W, X) & Y=Z & Z=a.
-		 * 
+		 *
 		 * r(a, b). r(c, d).
-		 * 
+		 *
 		 * Expected IDB facts:
-		 * 
+		 *
 		 * p(a, b, a, a). p(c, d, a, a).
 		 */
 
@@ -669,7 +664,7 @@ public final class EvalTest {
 		Parameter<?> argumentZ = Parameter.createVariable("Z");
 		Parameter<?> argumenta = Parameter.createConstant("a");
 
-		Literal head = Literal.create(p, argumentW, argumentX, argumentY, argumentZ);
+		Literal head     = Literal.create(p, argumentW, argumentX, argumentY, argumentZ);
 		Literal subgoal1 = Literal.create(r, argumentW, argumentX);
 		Literal subgoal2 = Literal.create(BuiltInPredicates.EQUALS, argumentY, argumentZ);
 		Literal subgoal3 = Literal.create(BuiltInPredicates.EQUALS, argumentZ, argumenta);
@@ -679,7 +674,7 @@ public final class EvalTest {
 		List<IRule> rules = new ArrayList<IRule>();
 		rules.add(rule);
 
-		String[][] relationR = { { "a", "b" }, { "c", "d" } };
+		String[][] relationR = {{"a", "b"}, {"c", "d"}};
 
 		DataIterator relationRIterator = Utils.createRelationIterator(relationR);
 
@@ -688,7 +683,7 @@ public final class EvalTest {
 		Collection<IFacts> edbRelations = new ArrayList<IFacts>();
 		edbRelations.add(relationRFacts);
 
-		IEvaluator evaluator = new NonRecursiveEvaluator(rules);
+		IEvaluator         evaluator    = new NonRecursiveEvaluator(rules);
 		Collection<IFacts> idbRelations = evaluator.eval(edbRelations);
 
 		assertEquals(1, idbRelations.size());
@@ -708,11 +703,11 @@ public final class EvalTest {
 
 		/*
 		 * p(X, Y) :- r(X, Y) & X<5.
-		 * 
+		 *
 		 * r(1, 2). r(3, 4). r(5, 6). r(7, 8).
-		 * 
+		 *
 		 * Expected IDB facts:
-		 * 
+		 *
 		 * p(1, 2). p(3, 4).
 		 */
 
@@ -725,7 +720,7 @@ public final class EvalTest {
 
 		Collection<IFacts> edbRelations = parser.getFacts();
 
-		IEvaluator evaluator = new NonRecursiveEvaluator(rules);
+		IEvaluator         evaluator    = new NonRecursiveEvaluator(rules);
 		Collection<IFacts> idbRelations = evaluator.eval(edbRelations);
 
 		assertEquals(1, idbRelations.size());
@@ -746,11 +741,11 @@ public final class EvalTest {
 
 		/*
 		 * p(X, Y) :- r(X, Y) & X<1.5.
-		 * 
+		 *
 		 * r(1.1, 1.2). r(1.3, 1.4). r(1.5, 1.6). r(1.7, 1.8).
-		 * 
+		 *
 		 * Expected IDB facts:
-		 * 
+		 *
 		 * p(1.1, 1.2). p(1.3, 1.4).
 		 */
 
@@ -763,7 +758,7 @@ public final class EvalTest {
 
 		Collection<IFacts> edbRelations = parser.getFacts();
 
-		IEvaluator evaluator = new NonRecursiveEvaluator(rules);
+		IEvaluator         evaluator    = new NonRecursiveEvaluator(rules);
 		Collection<IFacts> idbRelations = evaluator.eval(edbRelations);
 
 		assertEquals(1, idbRelations.size());
@@ -784,11 +779,11 @@ public final class EvalTest {
 
 		/*
 		 * p(X, Y) :- r(X, Y) & X<e.
-		 * 
+		 *
 		 * r(a, b). r(c, d). r(e, f). r(g, h).
-		 * 
+		 *
 		 * Expected IDB facts:
-		 * 
+		 *
 		 * p(a, b). p(c, d).
 		 */
 
@@ -801,7 +796,7 @@ public final class EvalTest {
 
 		Collection<IFacts> edbRelations = parser.getFacts();
 
-		IEvaluator evaluator = new NonRecursiveEvaluator(rules);
+		IEvaluator         evaluator    = new NonRecursiveEvaluator(rules);
 		Collection<IFacts> idbRelations = evaluator.eval(edbRelations);
 
 		assertEquals(1, idbRelations.size());
@@ -822,11 +817,11 @@ public final class EvalTest {
 
 		/*
 		 * p(X, Y) :- r(X, Y) & X<true.
-		 * 
+		 *
 		 * r(false, false). r(false, true). r(true, false). r(true, true).
-		 * 
+		 *
 		 * Expected IDB facts:
-		 * 
+		 *
 		 * p(false, false). p(false, true).
 		 */
 
@@ -839,7 +834,7 @@ public final class EvalTest {
 
 		Collection<IFacts> edbRelations = parser.getFacts();
 
-		IEvaluator evaluator = new NonRecursiveEvaluator(rules);
+		IEvaluator         evaluator    = new NonRecursiveEvaluator(rules);
 		Collection<IFacts> idbRelations = evaluator.eval(edbRelations);
 
 		assertEquals(1, idbRelations.size());
@@ -860,11 +855,11 @@ public final class EvalTest {
 
 		/*
 		 * p(X, Y) :- r(X, Y) & X<e.
-		 * 
+		 *
 		 * r(a, b). r(c, d). r(e, f). r(g, h).
-		 * 
+		 *
 		 * Expected IDB facts:
-		 * 
+		 *
 		 * p(a, b). p(c, d).
 		 */
 
@@ -877,7 +872,7 @@ public final class EvalTest {
 
 		Collection<IFacts> edbRelations = parser.getFacts();
 
-		IEvaluator evaluator = new NonRecursiveEvaluator(rules);
+		IEvaluator         evaluator    = new NonRecursiveEvaluator(rules);
 		Collection<IFacts> idbRelations = evaluator.eval(edbRelations);
 
 		assertEquals(1, idbRelations.size());
@@ -898,12 +893,12 @@ public final class EvalTest {
 
 		/*
 		 * p(X, Y) :- r(X, Y) & X<05.01.1970.
-		 * 
+		 *
 		 * r(01.01.1970, 02.01.1970). r(03.01.1970, 04.01.1970). r(05.01.1970,
 		 * 06.01.1970). r(07.01.1970, 08.01.1970).
-		 * 
+		 *
 		 * Expected IDB facts:
-		 * 
+		 *
 		 * p(01.01.1970, 02.01.1970). p(03.01.1970, 04.01.1970).
 		 */
 
@@ -916,7 +911,7 @@ public final class EvalTest {
 
 		Collection<IFacts> edbRelations = parser.getFacts();
 
-		IEvaluator evaluator = new NonRecursiveEvaluator(rules);
+		IEvaluator         evaluator    = new NonRecursiveEvaluator(rules);
 		Collection<IFacts> idbRelations = evaluator.eval(edbRelations);
 
 		assertEquals(1, idbRelations.size());
@@ -935,9 +930,9 @@ public final class EvalTest {
 	 * @return DataIterator
 	 */
 	private static DataIterator getTable() {
-		final ParameterValue<?>[][] values = new ParameterValue<?>[][] { { ParameterValue.create("abc"), ParameterValue.create("def") },
-				{ ParameterValue.create("abc"), ParameterValue.create("ghi") },
-				{ ParameterValue.create("def"), ParameterValue.create("ghi") } };
+		final ParameterValue<?>[][] values = new ParameterValue<?>[][]{{ParameterValue.create("abc"), ParameterValue.create("def")},
+				{ParameterValue.create("abc"), ParameterValue.create("ghi")},
+				{ParameterValue.create("def"), ParameterValue.create("ghi")}};
 		return new TableIterator(values);
 	}
 
@@ -945,8 +940,8 @@ public final class EvalTest {
 	 * @return DataIterator
 	 */
 	private static DataIterator getSelectionTable() {
-		final ParameterValue<?>[][] values = new ParameterValue<?>[][] { { ParameterValue.create("abc"), ParameterValue.create("def") },
-				{ ParameterValue.create("abc"), ParameterValue.create("abc") } };
+		final ParameterValue<?>[][] values = new ParameterValue<?>[][]{{ParameterValue.create("abc"), ParameterValue.create("def")},
+				{ParameterValue.create("abc"), ParameterValue.create("abc")}};
 		return new TableIterator(values);
 	}
 }

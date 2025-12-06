@@ -1,11 +1,10 @@
 package tripleo.vendor.com.github.dritter.hd.dlog.parser.internal;
 
-import java.util.List;
-
 import org.junit.jupiter.api.*;
+import tripleo.vendor.com.github.dritter.hd.dlog.IRule;
 import tripleo.vendor.com.github.dritter.hd.dlog.parser.DlogParser;
 
-import tripleo.vendor.com.github.dritter.hd.dlog.IRule;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,7 +17,7 @@ public class NumericParserTest {
     /**
      * Set up DlogParser for test.
      */
-    @Disabled
+    @BeforeEach
     public void setUp() {
         hp = new DlogParser();
     }

@@ -1,17 +1,12 @@
 package tripleo.vendor.com.github.dritter.hd.dlog.internal;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.List;
-
+import org.junit.jupiter.api.*;
 import tripleo.vendor.com.github.dritter.hd.dlog.IRule;
 import tripleo.vendor.com.github.dritter.hd.dlog.parser.DlogParser;
 
+import java.util.List;
 
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NumericParserTest {
     /**

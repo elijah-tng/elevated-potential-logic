@@ -1,14 +1,13 @@
 package tripleo.vendor.com.github.dritter.hd.dlog.parser.internal;
 
-import java.util.Collection;
-import java.util.Iterator;
-
 import org.junit.jupiter.api.*;
 import tripleo.vendor.com.github.dritter.hd.dlog.evaluator.DlogEvaluator;
 import tripleo.vendor.com.github.dritter.hd.dlog.evaluator.IFacts;
+import tripleo.vendor.com.github.dritter.hd.dlog.parser.DlogEvaluatorParser;
 import tripleo.vendor.com.github.dritter.hd.dlog.parser.DlogParser;
 
-import tripleo.vendor.com.github.dritter.hd.dlog.parser.DlogEvaluatorParser;
+import java.util.Collection;
+import java.util.Iterator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,7 +15,7 @@ public class DlogEvaluatorParserTest {
 	private DlogEvaluatorParser evalParser;
 	private DlogParser          parser;
 
-	@BeforeAll
+	@BeforeEach
 	public void setup() throws Exception {
 		this.evalParser = DlogEvaluatorParser.create();
 		this.parser     = new DlogParser();

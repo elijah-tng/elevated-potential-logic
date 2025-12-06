@@ -1,15 +1,15 @@
 package tripleo.vendor.batoull22;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import tripleo.elijah.util.Mode;
-import tripleo.elijah.util.Operation;
+import tripleo.elijah_fluffy.util.Mode;
+import tripleo.elijah_fluffy.util.Operation;
+import tripleo.elijah_fluffy.util.SimplePrintLoggerToRemoveSoon;
 
 public class Expert__SystemTest {
 
 	@Test
-	@Ignore
+	//@Ignore
 	public void testOpenfile() {
 		final EK_ExpertSystem i = new EK_ExpertSystem();
 
@@ -22,17 +22,17 @@ public class Expert__SystemTest {
 		// reader.print();
 		reader.closefile();
 
-		// tripleo.elijah.util.SimplePrintLoggerToRemoveSoon.println_out_4("------------------------");
+		// SimplePrintLoggerToRemoveSoon.println_out/*_4*/("------------------------");
 		boolean f = i.Forwardchaining();
-		// tripleo.elijah.util.SimplePrintLoggerToRemoveSoon.println_out_4(" ");
-		tripleo.elijah.util.SimplePrintLoggerToRemoveSoon.println_out_4("Result of Forwardchaining: " + f);
+		// SimplePrintLoggerToRemoveSoon.println_out/*_4*/(" ");
+		SimplePrintLoggerToRemoveSoon.println_out/*_4*/("Result of Forwardchaining: " + f);
 
-		// tripleo.elijah.util.SimplePrintLoggerToRemoveSoon.println_out_4(" ");
+		// SimplePrintLoggerToRemoveSoon.println_out/*_4*/(" ");
 		// i.print();
 
-		// tripleo.elijah.util.SimplePrintLoggerToRemoveSoon.println_out_4("------------------------");
+		// SimplePrintLoggerToRemoveSoon.println_out/*_4*/("------------------------");
 		boolean b = i.Backwardchaining();
-		tripleo.elijah.util.SimplePrintLoggerToRemoveSoon.println_out_4("Result of Backwardchaining: " + b);
-		tripleo.elijah.util.SimplePrintLoggerToRemoveSoon.println_out_4(" ");
+		SimplePrintLoggerToRemoveSoon.println_out/*_4*/("Result of Backwardchaining: " + b);
+		SimplePrintLoggerToRemoveSoon.println_out/*_4*/(" ");
 	}
 }

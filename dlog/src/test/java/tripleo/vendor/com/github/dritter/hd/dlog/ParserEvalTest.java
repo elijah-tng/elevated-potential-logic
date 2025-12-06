@@ -1,12 +1,11 @@
 package tripleo.vendor.com.github.dritter.hd.dlog;
 
-import java.util.Collection;
-import java.util.List;
-
-import tripleo.vendor.com.github.dritter.hd.dlog.parser.DlogParser;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import tripleo.vendor.com.github.dritter.hd.dlog.parser.DlogParser;
+
+import java.util.Collection;
+import java.util.List;
 
 public final class ParserEvalTest {
     private DlogParser hp;

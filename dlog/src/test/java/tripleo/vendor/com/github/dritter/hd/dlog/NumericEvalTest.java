@@ -1,18 +1,16 @@
 package tripleo.vendor.com.github.dritter.hd.dlog;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+//import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
+//import static org.junit.jupiter.api.Assertions.assertNull;
+//import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import org.junit.Test;
+import tripleo.vendor.com.github.dritter.hd.dlog.algebra.*;
 
-import tripleo.vendor.com.github.dritter.hd.dlog.algebra.DataIterator;
-import tripleo.vendor.com.github.dritter.hd.dlog.algebra.ParameterValue;
-import tripleo.vendor.com.github.dritter.hd.dlog.algebra.TableIterator;
+import java.util.*;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.*;
 
 public class NumericEvalTest {
     @Test

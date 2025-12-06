@@ -13,8 +13,28 @@
 	<artifactId>elijah-ek</artifactId>
 	<version>2024.elevated-potential.25-11</version>
 
-	<dependencies></dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>com.github.elijah-tng</groupId>
+			<artifactId>cegont-upper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+		</dependency>
+	</dependencies>
+
 	<dependencyManagement>
-		<dependencies></dependencies>
+		<dependencies>
+			<dependency>
+				<groupId>com.github.elijah-tng</groupId>
+				<artifactId>cegont-upper</artifactId>
+				<version>2025.04.21</version>
+			</dependency>
+		</dependencies>
 	</dependencyManagement>
 </project>
