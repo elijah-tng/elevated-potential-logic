@@ -13,7 +13,7 @@ Elijah elevated-potential-logic
 ```shell
 git clone https://github.com/elijah-tng/elevated-potential-logic
 cd elevated-potential-logic
-git switch rolling
+git switch rolling-logic
 ```
 
 ```shell
@@ -23,7 +23,7 @@ mvnd clean test
 \-or-
 
 ```shell
-./mvnw clean test"
+./mvnw clean test
 ```
 
 Goals
